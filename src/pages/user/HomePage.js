@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
 import "./HomePage.css";
 
-const API_URL = "http://adidas-backend-gftf.onrender.com/api/products";
+const API_URL = "https://adidas-backend-gftf.onrender.com/api/products";
 
 const HomePage = ({ wishlist, setWishlist }) => {
   const [msg, setMsg] = useState("");

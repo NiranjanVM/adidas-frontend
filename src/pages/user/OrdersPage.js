@@ -14,7 +14,7 @@ const OrdersPage = ({ orders, setOrders }) => {
   const fetchOrders = async () => {
     if (!token) return showMessage("Please login first");
     try {
-      const res = await fetch("http://adidas-backend-gftf.onrender.com/api/orders/myorders", {
+      const res = await fetch("https://adidas-backend-gftf.onrender.com/api/orders/myorders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch orders");
@@ -36,7 +36,7 @@ const OrdersPage = ({ orders, setOrders }) => {
   const handleCancel = async (id) => {
     if (!window.confirm("Are you sure you want to cancel this order?")) return;
     try {
-      const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/orders/${id}`, {
+      const res = await fetch(`https://adidas-backend-gftf.onrender.com/api/orders/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

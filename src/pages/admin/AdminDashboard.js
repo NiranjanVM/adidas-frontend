@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import EditProductPopup from "../../components/EditProductPopup";
 import "./AdminDashboard.css";
 
-const API_URL = "http://adidas-backend-gftf.onrender.com/api/products";
+const API_URL = "https://adidas-backend-gftf.onrender.com/api/products";
 
 const AdminDashboard = ({ products, setProducts, searchTarget, setSearchTarget }) => {
   const [editingProduct, setEditingProduct] = useState(null);

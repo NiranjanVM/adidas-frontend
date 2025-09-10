@@ -16,7 +16,7 @@ const BagPage = ({ bag, setBag, orders, setOrders }) => {
   const fetchBag = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://adidas-backend-gftf.onrender.com/api/bag", {
+      const res = await fetch("https://adidas-backend-gftf.onrender.com/api/bag", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch bag");
@@ -53,7 +53,7 @@ const BagPage = ({ bag, setBag, orders, setOrders }) => {
     );
 
     try {
-      const res = await fetch("http://adidas-backend-gftf.onrender.com/api/orders", {
+      const res = await fetch("https://adidas-backend-gftf.onrender.com/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const BagPage = ({ bag, setBag, orders, setOrders }) => {
       const newOrder = await res.json();
 
       // ✅ Clear bag in backend
-      await fetch("http://adidas-backend-gftf.onrender.com/api/bag/clear", {
+      await fetch("https://adidas-backend-gftf.onrender.com/api/bag/clear", {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -83,7 +83,7 @@ const BagPage = ({ bag, setBag, orders, setOrders }) => {
   // Update quantity in backend
   const handleQuantityChange = async (id, qty) => {
     try {
-      const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/bag/update/${id}`, {
+      const res = await fetch(`https://adidas-backend-gftf.onrender.com/api/bag/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const BagPage = ({ bag, setBag, orders, setOrders }) => {
   // Remove item from bag
   const handleRemove = async (id) => {
     try {
-      const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/bag/remove/${id}`, {
+      const res = await fetch(`https://adidas-backend-gftf.onrender.com/api/bag/remove/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -38,7 +38,7 @@ function AppWrapper() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://adidas-backend-gftf.onrender.com/api/products");
+        const res = await fetch("https://adidas-backend-gftf.onrender.com/api/products");
         const data = await res.json();
         setAdminProducts(data);
       } catch (err) {

@@ -26,7 +26,7 @@ const EditProductPopup = ({ product, onSave, onClose }) => {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/products/${product._id}`, {
+      const res = await fetch(`https://adidas-backend-gftf.onrender.com/api/products/${product._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

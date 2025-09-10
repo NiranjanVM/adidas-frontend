@@ -16,7 +16,7 @@ const WishlistPage = ({ wishlist, setWishlist, bag, setBag }) => {
     const fetchWishlist = async () => {
       if (!token) return;
       try {
-        const res = await fetch("http://adidas-backend-gftf.onrender.com/api/wishlist", {
+        const res = await fetch("https://adidas-backend-gftf.onrender.com/api/wishlist", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) throw new Error("Failed to fetch wishlist");

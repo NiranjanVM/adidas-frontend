@@ -23,13 +23,13 @@ const ProductCard = ({ product, wishlist, setWishlist, showMessage }) => {
       let res;
       if (inWishlist) {
         // remove
-        res = await fetch(`http://adidas-backend-gftf.onrender.com/api/wishlist/remove/${product._id}`, {
+        res = await fetch(`https://adidas-backend-gftf.onrender.com/api/wishlist/remove/${product._id}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });
       } else {
         // add
-        res = await fetch("http://adidas-backend-gftf.onrender.com/api/wishlist/add", {
+        res = await fetch("https://adidas-backend-gftf.onrender.com/api/wishlist/add", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

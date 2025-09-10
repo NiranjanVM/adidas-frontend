@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { BiShoppingBag } from "react-icons/bi";
 import "./ProductDetailsPage.css";
 
-const API_URL = "http://adidas-backend-gftf.onrender.com/api/products";
-const REVIEW_API = "http://adidas-backend-gftf.onrender.com/api/reviews";
+const API_URL = "https://adidas-backend-gftf.onrender.com/api/products";
+const REVIEW_API = "https://adidas-backend-gftf.onrender.com/api/reviews";
 
 const ProductDetailsPage = ({ bag, setBag }) => {
   const { id } = useParams();
@@ -56,7 +56,7 @@ const ProductDetailsPage = ({ bag, setBag }) => {
     if (!token) return showMessage("Please login first");
 
     try {
-      const res = await fetch("http://adidas-backend-gftf.onrender.com/api/bag/add", {
+      const res = await fetch("https://adidas-backend-gftf.onrender.com/api/bag/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

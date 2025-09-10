@@ -14,7 +14,7 @@ const WishlistCard = ({ product, wishlist, setWishlist, bag, setBag, showMessage
     if (!token) return showMessage("Please login first");
 
     try {
-      const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/wishlist/remove/${product._id}`, {
+      const res = await fetch(`https://adidas-backend-gftf.onrender.com/api/wishlist/remove/${product._id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -37,7 +37,7 @@ const WishlistCard = ({ product, wishlist, setWishlist, bag, setBag, showMessage
   if (!token) return showMessage("Please login first");
 
   try {
-    const res = await fetch("http://adidas-backend-gftf.onrender.com/api/bag/add", {
+    const res = await fetch("https://adidas-backend-gftf.onrender.com/api/bag/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

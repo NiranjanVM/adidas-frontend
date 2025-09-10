@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AdminNavbar from "./AdminNavbar";
 import AdminDashboard from "./AdminDashboard";
 
-const API_URL = "http://adidas-backend-gftf.onrender.com/api/products";
+const API_URL = "https://adidas-backend-gftf.onrender.com/api/products";
 
 const AdminPage = () => {
   const [products, setProducts] = useState([]);

@@ -40,7 +40,7 @@ const Navbar = ({ currentUser, setCurrentUser }) => {
       }
       try {
         const res = await fetch(
-          `http://adidas-backend-gftf.onrender.com/api/products/search?q=${query}`
+          `https://adidas-backend-gftf.onrender.com/api/products/search?q=${query}`
         );
         const data = await res.json();
         setResults(data);
