@@ -15,9 +15,12 @@ const ManageOrders = () => {
   const fetchOrders = async () => {
     if (!token) return showMessage("Please login first");
     try {
-      const res = await fetch("http://adidas-backend-gftf.onrender.com/api/orders/admin", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await fetch(
+        "https://adidas-backend-gftf.onrender.com/api/orders/admin",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       if (!res.ok) throw new Error("Failed to fetch orders");
       const data = await res.json();
       setOrders(Array.isArray(data) ? data : []);
@@ -30,33 +33,35 @@ const ManageOrders = () => {
 
   useEffect(() => {
     fetchOrders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-// Cancel order (works for user or admin)
-const handleCancel = async (id) => {
-  if (!window.confirm("Are you sure you want to cancel this order?")) return;
+  // Cancel order (works for user or admin)
+  const handleCancel = async (id) => {
+    if (!window.confirm("Are you sure you want to cancel this order?")) return;
 
-  try {
-    const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/orders/${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    try {
+      const res = await fetch(
+        `https://adidas-backend-gftf.onrender.com/api/orders/${id}`,
+        {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || "Failed to cancel order");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Failed to cancel order");
+      }
+
+      // Remove order from local state
+      setOrders((prev) => prev.filter((order) => order._id !== id));
+      showMessage("Order canceled!");
+    } catch (err) {
+      console.error(err);
+      showMessage(err.message);
     }
-
-    // Remove order from local state
-    setOrders((prev) => prev.filter((order) => order._id !== id));
-    showMessage("Order canceled!");
-  } catch (err) {
-    console.error(err);
-    showMessage(err.message);
-  }
-};
-
-
+  };
 
   // Toggle status
   const toggleStatus = async (id) => {
@@ -68,16 +73,21 @@ const handleCancel = async (id) => {
     else if (order.status === "Shipped") newStatus = "Delivered";
 
     try {
-      const res = await fetch(`http://adidas-backend-gftf.onrender.com/api/orders/status/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ status: newStatus }),
-      });
+      const res = await fetch(
+        `https://adidas-backend-gftf.onrender.com/api/orders/status/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ status: newStatus }),
+        }
+      );
       if (!res.ok) throw new Error("Failed to update status");
-      setOrders(orders.map((o) => (o._id === id ? { ...o, status: newStatus } : o)));
+      setOrders(
+        orders.map((o) => (o._id === id ? { ...o, status: newStatus } : o))
+      );
       showMessage("Status updated!");
     } catch (err) {
       console.error(err);
@@ -86,7 +96,8 @@ const handleCancel = async (id) => {
   };
 
   const total = orders.reduce(
-    (acc, order) => acc + order.items.reduce((sum, i) => sum + i.product.price * i.quantity, 0),
+    (acc, order) =>
+      acc + order.items.reduce((sum, i) => sum + i.product.price * i.quantity, 0),
     0
   );
 
