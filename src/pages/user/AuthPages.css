@@ -1,0 +1,91 @@
+.auth-page {
+  max-width: 400px;
+  width: 90%; /* responsive width */
+  margin: 80px auto; /* center horizontally with top/bottom space */
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: white;
+  margin-top: 200px;
+}
+
+.auth-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-page input {
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.auth-page input:focus {
+  border-color: black;
+}
+
+.auth-page button {
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.auth-page button:hover {
+  background: #333;
+}
+
+.auth-page p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.auth-page p span {
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-page p span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+  .auth-page {
+    margin: 40px auto;
+    padding: 20px;
+     margin-top: 200px;
+  }
+
+  .auth-logo {
+    width: 80px;
+  }
+
+  .auth-page input,
+  .auth-page button {
+    font-size: 14px;
+    padding: 10px;
+    
+  }
+
+  .auth-page button {
+    
+    text-align: center;
+  }
+}

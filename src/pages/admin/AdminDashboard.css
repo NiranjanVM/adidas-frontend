@@ -1,0 +1,125 @@
+.admin-dashboard {
+  padding: 20px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.add-btn {
+  padding: 8px 14px;
+  border: none;
+  background: #111;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #222;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.product-card.highlight {
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 10px #FFC200;
+}
+
+.product-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.product-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.edit-btn, .delete-btn {
+  flex: 1;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #000;
+  color: #eee;
+  text-align: center;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  text-align: center;
+}
+
+.aadmin-toast-msg {
+  
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0.9;
+  animation: slideInOut 2s forwards;
+  text-align: center;
+  
+}
+
+@keyframes slideInOut {
+  0% { transform: translate(-50%, 50px); opacity: 0; }
+  10% { transform: translate(-50%, 0); opacity: 1; }
+  90% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 50px); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .product-img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-img {
+    height: 200px;
+  }
+ 
+}

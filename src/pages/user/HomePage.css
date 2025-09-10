@@ -1,0 +1,58 @@
+.user-home-page {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Title row */
+.user-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-left: 20px;
+  flex-wrap: wrap; /* allow wrapping for smaller screens */
+}
+
+.user-title-row h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.user-title-row p {
+  color: grey;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Product grid (auto-responsive) */
+.user-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px 0;
+  overflow-x: hidden;
+}
+
+/* Toast message */
+.user-toast-msg {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0.9;
+  animation: user-slideInOut 2s forwards;
+  text-align: center;
+}
+
+@keyframes user-slideInOut {
+  0% { transform: translate(-50%, 50px); opacity: 0; }
+  10% { transform: translate(-50%, 0); opacity: 1; }
+  90% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 50px); opacity: 0; }
+}
+

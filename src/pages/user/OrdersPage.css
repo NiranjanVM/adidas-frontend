@@ -1,0 +1,168 @@
+.user-orders-page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.user-orders-header {
+  display: flex;
+  flex-direction: column;  /* 👈 stack heading & count */
+  align-items: flex-start; /* 👈 left aligned */
+  margin-bottom: 20px;
+}
+.user-orders-header h2 {
+  margin: 0;
+
+ 
+}
+
+.user-orders-count {
+  margin: 5px 0 0 0;  /* 👈 little gap below h2 */
+  color: grey;
+  font-size: 1rem;
+}
+
+
+
+.user-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-order-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fafafa;
+}
+
+.user-order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-order-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.user-order-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.user-order-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.user-order-info p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.user-order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.user-cancel-btn {
+  padding: 8px 12px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.user-cancel-btn:hover {
+  background: #222;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.user-order-status {
+  padding: 5px 12px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.user-order-status.pending {
+  background: none;
+  color: orange;
+}
+
+.user-order-status.shipped {
+  background: #3399ff;
+}
+
+.user-order-status.delivered {
+  background: green;
+}
+
+.user-orders-summary {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-empty-state {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+.user-get-started-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.user-get-started-btn:hover {
+  background: #333;
+}
+
+.user-toast-msg {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0.9;
+  animation: user-slideInOut 2s forwards;
+}
+
+@keyframes user-slideInOut {
+  0% { transform: translate(-50%, 50px); opacity: 0; }
+  10% { transform: translate(-50%, 0); opacity: 1; }
+  90% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 50px); opacity: 0; }
+}

@@ -1,0 +1,73 @@
+/* Default layout */
+.user-wishlist-page {
+  padding: 20px;
+}
+
+.user-wishlist-header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.user-wishlist-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.user-wishlist-header p {
+  color: grey;
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+.user-wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Empty state */
+.user-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.user-get-started-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user-get-started-btn:hover {
+  background-color: #333;
+}
+
+/* Toast message styling */
+.user-toast-msg {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  animation: user-fadeInOut 2s ease forwards;
+}
+
+@keyframes user-fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+/* RESPONSIVE FIXES */
+

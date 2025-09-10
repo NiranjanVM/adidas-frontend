@@ -1,0 +1,153 @@
+/* USER NAVBAR */
+
+
+.user-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.user-logo img {
+  height: 80px;
+}
+
+.user-nav-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.user-nav-icons a {
+  color: #000;
+  transition: transform 0.2s;
+}
+
+.user-nav-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Search container */
+.user-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-search-box {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 320px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.user-search-results {
+  margin-top: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.user-search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.user-search-item:hover {
+  background: #f5f5f5;
+}
+
+.user-search-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.user-no-result {
+  padding: 8px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.user-search-item span {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 350px) {
+  .user-navbar {
+    padding: 5px 10px;
+  }
+
+  .user-logo img {
+    height: 70px;
+  }
+
+  .user-nav-icons {
+    gap: 6px;
+  }
+
+  .user-nav-icons a {
+    font-size: 21px;
+  }
+
+  .user-search-box {
+    width: 260px;
+    left: 50%;
+    transform: translateX(-57%);
+  }
+
+  .user-search-input {
+    font-size: 16px;
+    padding: 6px 8px;
+  }
+
+  .user-search-item img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 300px) {
+  .user-search-item span {
+    font-size: 12px;
+    max-width: 120px;
+  }
+}
