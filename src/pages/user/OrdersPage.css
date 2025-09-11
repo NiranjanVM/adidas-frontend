@@ -109,11 +109,14 @@
 }
 
 .user-order-status.shipped {
-  background: #3399ff;
+  background: none;
+  color: #3399ff;
 }
 
 .user-order-status.delivered {
-  background: green;
+  
+  background: none;
+  color: green;
 }
 
 .user-orders-summary {

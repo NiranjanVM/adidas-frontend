@@ -56,3 +56,17 @@
   100% { transform: translate(-50%, 50px); opacity: 0; }
 }
 
+@media (max-width: 480px) {
+  .user-product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .user-title-row h1 {
+    font-size: 1.5rem;
+  }
+
+  .user-title-row p {
+    font-size: 0.9rem;
+  }
+}

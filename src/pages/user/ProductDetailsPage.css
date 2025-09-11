@@ -153,6 +153,43 @@
   100% { transform: translate(-50%, 50px); opacity: 0; }
 }
 
+
+
+@media (max-width: 768px) {
+  .user-product-main {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .user-image-container {
+    width: 100%;
+    max-width: 100%; /* full width on mobile */
+  }
+
+  .user-details {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    text-align: center; /* center text on mobile */
+  }
+
+  .user-reviews-section {
+    margin-top: 40px; /* reduce extra space */
+  }
+
+  .user-add-review {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .user-add-review button {
+    width: 100%; /* button full width on small screens */
+  }
+}
+
+
 @media (max-width: 350px) {
   .user-product-details {
     padding: 20px; /* reduce padding */
