@@ -125,6 +125,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 .user-add-review button:hover {
@@ -186,6 +187,7 @@
 
   .user-add-review button {
     width: 100%; /* button full width on small screens */
+    text-align: center;
   }
 }
 

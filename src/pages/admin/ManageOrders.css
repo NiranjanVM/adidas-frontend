@@ -121,15 +121,18 @@
 }
 
 .admin-order-status.pending {
-  background: orange;
+  background: none;
+  color: orange;
 }
 
 .admin-order-status.shipped {
-  background: #3399ff; /* light blue */
+  background: none; /* light blue */
+  color: #3399ff;
 }
 
 .admin-order-status.delivered {
-  background: green;
+  background: none;
+  color: green;
 }
 
 .admin-orders-summary {
